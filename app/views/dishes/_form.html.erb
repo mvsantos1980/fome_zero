@@ -1,3 +1,4 @@
+<div class="col-6">
 <%= form_with(model: dish, local: true) do |form| %>
   <% if dish.errors.any? %>
     <div id="error_explanation">
@@ -12,22 +13,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label "Descrição" %>
     <%= form.text_field :description, id: :dish_description %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label "Preço $" %>
     <%= form.text_field :price, id: :dish_price %>
   </div>
 
   <div class="field">
-    <%= form.label :timePreparation %>
+    <%= form.label "Tempo de preparo horas:minutos" %>
     <%= form.time_select :timePreparation, id: :dish_timePreparation %>
   </div>
 
   <div class="field">
-    <%= form.label :timePreparation %>
+    <%= form.label "Ingredientes" %>
     <% @ingredients.each do|ingredient|%>
       <%= check_box_tag "dish[ingredient_ids][]", ingredient.id, @dish.ingredients.include?(ingredient) %>
       <%= ingredient.description %>
@@ -35,6 +36,8 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Salvar", :class => 'btn btn-outline-success' %>
   </div>
+
 <% end %>
+</div>

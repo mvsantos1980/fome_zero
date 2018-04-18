@@ -29,7 +29,7 @@ class DishesController < ApplicationController
 
     respond_to do |format|
       if @dish.save
-        format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
+        format.html { redirect_to @dish, notice: 'Prato adicionado com sucesso!.' }
         format.json { render :show, status: :created, location: @dish }
       else
         format.html { render :new }
@@ -70,6 +70,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:description, :price, :timePreparation)
+      params.require(:dish).permit(:description, :price, :timePreparation, :ingredient_ids => [])
     end
 end
