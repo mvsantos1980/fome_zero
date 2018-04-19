@@ -26,7 +26,7 @@
   <p class="card col-5">
     <strong class="card-header-pills text-info">Ingredientes:</strong><br>
     <span class="card-footer btn-group" style="border-radius: 0 0 15px 15px">
-      <% @dish.ingredients.each do |ingredient|%>
+      <% @dish.ingredients.order(:description).each do |ingredient|%>
 
         <span class="btn btn-secondary disabled ">
           <%=ingredient.description%>

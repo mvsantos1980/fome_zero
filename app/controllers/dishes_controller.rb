@@ -12,15 +12,20 @@ class DishesController < ApplicationController
   def show
   end
 
+  def homepage
+    @dishes = Dish.all.order(:description)
+    @enterprises = Enterprise.all
+  end
+
   # GET /dishes/new
   def new
     @dish = Dish.new
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.all.order(:description)
   end
 
   # GET /dishes/1/edit
   def edit
-    @ingredients = Ingredient.all
+    @ingredients = Ingredient.all.order(:description)
   end
 
   # POST /dishes
