@@ -1,30 +1,45 @@
+<% Time.zone = "America/Sao_Paulo" %>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Descrição:</strong>
-  <%= @dish.description %>
+<!--  <strong>Descrição:</strong>-->
+  <h1><%= @dish.description %></h1>
+<hr>
 </p>
+<div class="row">
+  <p class="col-3 card">
+    <strong class="text-info card-header-pills">Preço:</strong>
+  <span class="font-italic card-footer text-center text-black-50" style="font-size: 2.5em; border-radius: 0 0 15px 15px">
 
-<p>
-  <strong>Preço:</strong>
-  <%= @dish.price %>
-</p>
+    R<%= number_to_currency(@dish.price) %>
+  </span>
+  </p>
 
-<p>
-  <strong>Tempo de preparo:</strong>
-  <%= @dish.timePreparation %>
-</p>
-
-<p>
-  <strong>Ingredientes:</strong><br>
-
-  <% @dish.ingredients.each do |ingredient|%>
-    <span class="btn btn-dark disabled">
-    <%=ingredient.description%>
+  <p class="col-4 card">
+    <strong class="card-header-pills text-info">Tempo de preparo:</strong>
+    <span  class="font-italic card-footer text-center text-black-50" style="font-size: 2.5em; border-radius: 0 0 15px 15px">
+      <%= formatar_hora @dish.timePreparation %>
     </span>
-  <%end%>
 
-</p>
+  </p>
 
-<%= link_to 'Editar', edit_dish_path(@dish) %> |
-<%= link_to 'Voltar', dishes_path %>
+  <p class="card col-5">
+    <strong class="card-header-pills text-info">Ingredientes:</strong><br>
+    <span class="card-footer btn-group" style="border-radius: 0 0 15px 15px">
+      <% @dish.ingredients.each do |ingredient|%>
+
+        <span class="btn btn-secondary disabled ">
+          <%=ingredient.description%>
+        </span>
+
+      <%end%>
+      </span>
+  </p>
+
+</div>
+
+<footer class="card-footer">
+
+<%= link_to 'Editar', edit_dish_path(@dish) , :class => 'btn btn-outline-warning' %> |
+<%= link_to 'Voltar', dishes_path , :class => 'btn btn-outline-info' %>
+</footer>

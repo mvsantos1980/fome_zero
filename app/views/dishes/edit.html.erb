@@ -1,6 +1,11 @@
-<h1>Editing Dish</h1>
+<h1>Editando prato: <span class="text-info"><%= @dish.description %></span></h1>
 
 <%= render 'form', dish: @dish %>
 
-<%= link_to 'Show', @dish %> |
-<%= link_to 'Back', dishes_path %>
+
+<footer class="card-footer">
+
+  <%= link_to 'Visualizar', @dish , :class => 'btn btn-outline-warning' %> |
+  <%= link_to 'Voltar', dishes_path , :class => 'btn btn-outline-info' %>
+</footer>
+
