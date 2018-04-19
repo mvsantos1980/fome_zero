@@ -4,7 +4,7 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
-    @dishes = Dish.all
+    @dishes = Dish.all.order(:description)
   end
 
   # GET /dishes/1
@@ -20,6 +20,7 @@ class DishesController < ApplicationController
 
   # GET /dishes/1/edit
   def edit
+    @ingredients = Ingredient.all
   end
 
   # POST /dishes

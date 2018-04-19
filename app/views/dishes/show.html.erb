@@ -15,5 +15,16 @@
   <%= @dish.timePreparation %>
 </p>
 
+<p>
+  <strong>Ingredientes:</strong><br>
+
+  <% @dish.ingredients.each do |ingredient|%>
+    <span class="btn btn-dark disabled">
+    <%=ingredient.description%>
+    </span>
+  <%end%>
+
+</p>
+
 <%= link_to 'Editar', edit_dish_path(@dish) %> |
 <%= link_to 'Voltar', dishes_path %>
