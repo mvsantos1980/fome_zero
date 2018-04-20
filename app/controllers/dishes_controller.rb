@@ -14,7 +14,7 @@ class DishesController < ApplicationController
 
   def homepage
     @dishes = Dish.all.order(:description)
-    @enterprises = Enterprise.all
+    @enterprises = Enterprise.all.limit(1)
   end
 
   # GET /dishes/new

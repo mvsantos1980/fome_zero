@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.bordas-redondas{
+    border-radius: 0 0 15px 15px;
+}

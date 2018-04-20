@@ -2,53 +2,8 @@
 
 <header class="card-header-pills">
   <h1>
-    <span><%= @enterprises.each do |empresa| %></span>
+    <span><% @enterprises.each do |empresa| %></span>
+        <%= empresa.name %>
+        <% end  %>
   </h1>
 </header>
-
-<h1>Pratos</h1>
-
-<div class="row">
-  <div class="col-3 btn-info">
-    <p class="font-weight-bold">Descrição</p>
-  </div>
-  <div class="col-3 btn-info">
-    <p class="font-weight-bold">Preço</p>
-  </div>
-  <div class="col-3 btn-info">
-    <p class="font-weight-bold">Tempo de preparo</p>
-  </div>
-  <div class="col-3 btn-info">
-    <p class="font-weight-bold">Ação</p>
-  </div>
-  <% @dishes.each do |dish| %>
-
-      <div class="col-3 cel">
-        <p><%= dish.description %> </p>
-      </div>
-      <div class="col-3">
-        <p><%= dish.price %> </p>
-      </div>
-      <div class="col-3">
-        <p><%= formatar_hora dish.timePreparation %> </p>
-      </div>
-      <div class="col-3">
-        <span><%= link_to 'Exibir', dish, :class => 'btn btn-outline-info text-black-50' %></span>
-        <span><%= link_to 'Editar', edit_dish_path(dish), :class => 'btn btn-outline-warning text-black-50' %></span>
-        <span><%= link_to 'Excluir', dish, method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}, :class => 'btn btn-outline-danger text-black-50' %></span>
-      </div>
-    <p class="col-12"></p>
-  <% end %>
-</div>
-
-
-<footer class="card-footer">
-  <%= link_to 'Novo Prato', new_dish_path, :class => 'btn btn-outline-primary' %>
-</footer>
-
-<!--<script>-->
-<!--  $('.cel').onmouseover(-->
-<!--      $('p .col-12').addClass('btn-dark')-->
-<!--  )-->
-<!--</script>-->
-

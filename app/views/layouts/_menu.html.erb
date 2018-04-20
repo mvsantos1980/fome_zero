@@ -1,0 +1,14 @@
+
+
+  <% if (request.fullpath == root_path) %>
+    <% else %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light btn-group-vertical bordas-redondas">
+      <a class="btn btn-outline-info disabled" href=" # ">>>>>>>>>>></a>
+      <a class="btn btn-outline-info" href=" <%= root_path %> ">Home</a>
+      <a class="btn btn-outline-info" href=" <%= dishes_path %> ">Pratos</a>
+      <a class="btn btn-outline-info" href=" <%= ingredients_path %> ">Ingredientes</a>
+      <a class="btn btn-outline-info" href=" <%= enterprises_path %> ">Empresa</a>
+      <a class="btn btn-outline-info disabled" href=" # "><<<<<<<<<<</a>
+    </nav>
+  <% end %>
+
