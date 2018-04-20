@@ -2,8 +2,42 @@
 
 <header class="card-header-pills">
   <h1>
-    <span><% @enterprises.each do |empresa| %></span>
+    <span class="text-center font-weight-bold efeito-titulo" id="titulo-home" style="font-size: 1.5em">
+      <% @enterprises.each do |empresa| %>
         <%= empresa.name %>
         <% end  %>
+    </span>
   </h1>
 </header>
+
+<div class="row">
+  <% @dishes.each do |prato| %>
+    <div class="col-3">
+      
+    </div>
+  <% end %>
+</div>
+
+
+<footer class="card-footer text-center text-primary font-weight-bold">
+  <% @enterprises.each do |empresa| %>
+    <span>
+      <%= empresa.name %>
+       - © Direitos Reservados
+    </span><br>
+    <p>
+      <small>
+        <%= empresa.address %> -
+      </small>
+      <span>
+        <%= empresa.telephone %>
+      </span>
+      <small>
+         - <%= empresa.email %>
+      </small>
+    </p>
+  <% end %>
+</footer>
+<script>
+    $("#titulo-home").fitText();
+</script>

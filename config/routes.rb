@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "dishes#homepage"
-  
+
   resources :dishes do
     collection do
       get "homepage"

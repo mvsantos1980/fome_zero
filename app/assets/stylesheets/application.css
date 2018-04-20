@@ -16,3 +16,19 @@
 .bordas-redondas{
     border-radius: 0 0 15px 15px;
 }
+
+.efeito-titulo{
+    background: rgba(0,0,0,.125);
+    text-align: center;
+    color: #007bff;
+    font: 95px/1 "cursive";
+    /*text-transform: uppercase;*/
+    display: block;
+    text-shadow: #232545 -1px 1px 0,
+    #666 -2px 2px 0,
+    #d4cad1 -3px 3px 0;
+    /*#113aff -4px 4px 0;*/
+    margin: 5% auto 5%;
+    border-radius: 30px;
+    box-shadow: #666666 -2px 2px 0;
+}
