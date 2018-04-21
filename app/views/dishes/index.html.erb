@@ -21,7 +21,7 @@
         <p><%= dish.description %> </p>
       </div>
       <div class="col-3">
-        <p><%= dish.price %> </p>
+        <p>R<%= number_to_currency dish.price %> </p>
       </div>
       <div class="col-3">
         <p><%= formatar_hora dish.timePreparation %> </p>
@@ -30,7 +30,7 @@
         <span><%= link_to 'Exibir', dish, :class => 'btn btn-outline-info text-black-50' %></span>
         <span><%= link_to 'Editar', edit_dish_path(dish), :class => 'btn btn-outline-warning text-black-50' %></span>
         <span><%= link_to 'Excluir', dish, method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}, :class => 'btn btn-outline-danger text-black-50'%></span>
-        <span><%= link_to 'Excluir', dish, method: :delete, data: {confirm: 'Tem certeza que deseja excluir?'}%></span>
+
       </div>
     <p class="col-12"></p>
   <% end %>
