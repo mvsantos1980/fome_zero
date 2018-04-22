@@ -11,7 +11,7 @@
 
 <div class="row">
   <% @dishes.each do |prato| %>
-    <div class="col-3" style="  margin-bottom: 30px;">
+    <div class="col-4" style="  margin-bottom: 30px;">
       <div class="card">
         <div class="card-header text-center font-weight-bold">
           <%= prato.description %>
@@ -32,7 +32,7 @@
             </div>
           </div>
         </div>
-        <div class="card-footer btn-outline-secondary text-center mais-info">
+        <div id="btn-mod<%= prato.id %>" class="card-footer btn-outline-secondary text-center mais-info" onclick="modalShow('#mod<%= prato.id %>')">
           <span>Mais informações</span>
         </div>
       </div>
@@ -40,22 +40,38 @@
 
 <!--    modal-->
 
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal" id="mod<%= prato.id %>" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"><%= prato.description %></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header bg-light">
+            <h4 class="modal-title"><%= prato.description %></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="modalHide('#mod<%= prato.id %>');">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>Ingredientes do prato:</p>
-            <% prato..each do |prato| %>
+            <p class="text-black-50">Ingredientes do prato:</p>
+              <% prato.ingredients.order(:description).each do |ingrediente|  %>
+                <p class="btn btn-dark disabled">
+                  <%= ingrediente.description %>
+                </p>
+              <% end %>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div class="modal-footer bg-light">
+            <div class="row text-center">
+              <div class="col-4">
+                Valor
+              </div>
+              <div class="col-8">
+                Tempo de preparo
+              </div>
+              <div class="col-4">
+                R<%= number_to_currency prato.price %>
+              </div>
+              <div class="col-8">
+                <%= formatar_hora prato.timePreparation %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
