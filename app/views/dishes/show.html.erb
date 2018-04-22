@@ -25,10 +25,10 @@
 
   <p class="card col-5">
     <strong class="card-header-pills text-info">Ingredientes:</strong><br>
-    <span class="card-footer btn-group" style="border-radius: 0 0 15px 15px">
+    <span class="card-footer" style="border-radius: 0 0 15px 15px">
       <% @dish.ingredients.order(:description).each do |ingredient|%>
 
-        <span class="btn btn-secondary disabled ">
+        <span class="btn btn-secondary disabled " style="margin-bottom: 3px;">
           <%=ingredient.description%>
         </span>
 
