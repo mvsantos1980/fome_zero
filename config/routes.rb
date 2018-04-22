@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :administrators
   root "dishes#homepage"
 
   resources :dishes do
@@ -8,5 +9,6 @@ Rails.application.routes.draw do
   end
   resources :ingredients
   resources :enterprises
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -32,3 +32,13 @@
     border-radius: 30px;
     box-shadow: #666666 -2px 2px 0;
 }
+
+.btnAdm{
+    position: absolute;
+    float: right;
+    margin-bottom: 70px;
+}
+
+.mais-info{
+    cursor: pointer;
+}

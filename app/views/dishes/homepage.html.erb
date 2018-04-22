@@ -11,7 +11,7 @@
 
 <div class="row">
   <% @dishes.each do |prato| %>
-    <div class="col-3" style="margin-bottom: 30px;">
+    <div class="col-3" style="  margin-bottom: 30px;">
       <div class="card">
         <div class="card-header text-center font-weight-bold">
           <%= prato.description %>
@@ -32,12 +32,34 @@
             </div>
           </div>
         </div>
-        <div class="card-footer btn-outline-secondary text-center">
+        <div class="card-footer btn-outline-secondary text-center mais-info">
           <span>Mais informações</span>
         </div>
       </div>
     </div>
 
+<!--    modal-->
+
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"><%= prato.description %></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Ingredientes do prato:</p>
+            <% prato..each do |prato| %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
@@ -60,6 +82,9 @@
       </small>
     </p>
   <% end %>
+</footer>
+<footer class="modal-footer">
+  <%= link_to "Administrar conteúdo", administrators_path, :class => "btn btn-sm btn-light btnAdm"%>
 </footer>
 <script>
     $("#titulo-home").fitText();
